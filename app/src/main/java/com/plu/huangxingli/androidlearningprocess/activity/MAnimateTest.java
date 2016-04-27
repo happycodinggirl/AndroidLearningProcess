@@ -20,6 +20,7 @@ public class MAnimateTest extends AppCompatActivity {
     private CommonGifView giftView;
     private CommonGifView giftview2;
     private Timer timer;
+    MyHandler myHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,7 @@ public class MAnimateTest extends AppCompatActivity {
        // giftView.setGiftCount(10);
         giftview2 = (CommonGifView) findViewById(R.id.giftview2);
        /// giftview2.setGiftCount(6);
-        final MyHandler myHandler=new MyHandler();
+        myHandler=new MyHandler();
         timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
@@ -79,8 +80,9 @@ public class MAnimateTest extends AppCompatActivity {
         super.onDestroy();
         if (timer!=null){
             timer.cancel();
-
-
+        }
+        if (myHandler!=null){
+            myHandler.removeCallbacksAndMessages(null);
         }
     }
 }

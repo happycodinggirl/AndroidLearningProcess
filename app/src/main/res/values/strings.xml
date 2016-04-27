@@ -49,5 +49,9 @@
     <string name="title_activity_animator_set">AnimatorSet</string>
     <string name="title_activity_test_font">TestFontActivity</string>
     <string name="title_activity_view_handler">ViewHandlerActivity</string>
+    <string name="title_activity_sended_message">SendedMessageActivity</string>
+    <string name="title_activity_handler_test">HandlerTestActivity</string>
+    <string name="title_activity_glsurface_view_test">GLSurfaceViewTest</string>
+    <string name="title_activity_web_socket">WebSocketActivity</string>
 
 </resources>

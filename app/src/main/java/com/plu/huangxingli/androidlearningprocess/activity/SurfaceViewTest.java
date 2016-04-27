@@ -22,7 +22,7 @@ import java.io.IOException;
 /**
  * Created by lily on 16-1-11.
  */
-public class SurfaceViewTest extends BaseActivity {
+public class SurfaceViewTest extends BaseActivity implements SurfaceHolder.Callback{
       //  implements SurfaceHolder.Callback{
 
 
@@ -44,9 +44,9 @@ public class SurfaceViewTest extends BaseActivity {
         Point point=new Point();
         display.getSize(point);
         //要想要预览不变形，要做到２点，一是manifest的ａｃｔｉｖｉｔｙ设置|adjustResize，另一个要surfaceHolder.setFixSize要设置，这样才不会变形
-        surfaceHolder.setFixedSize(point.x,600);
-      //  surfaceHolder.addCallback(this);
-       // camera=Camera.open();
+        surfaceHolder.setFixedSize(point.x, 600);
+        surfaceHolder.addCallback(this);
+        //camera=Camera.open();
        /* FrameLayout frameLayout= (FrameLayout) findView(R.id.camera_preview);
         CameraPreview cameraPreview=new CameraPreview(this,camera);
         frameLayout.addView(cameraPreview);*/
@@ -76,12 +76,12 @@ public class SurfaceViewTest extends BaseActivity {
        // camera=null;
     }
 
-   /* @Override
+    @Override
     public void surfaceCreated(SurfaceHolder holder) {
         camera=getCameraInstance();
 
         if (camera!=null){
-            camera.setDisplayOrientation(90);
+            camera.setDisplayOrientation(0);
             try {
                 camera.setPreviewDisplay(surfaceHolder);
             } catch (IOException e) {
@@ -100,5 +100,5 @@ public class SurfaceViewTest extends BaseActivity {
     public void surfaceDestroyed(SurfaceHolder holder) {
 
 
-    }*/
+    }
 }

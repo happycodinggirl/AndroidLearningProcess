@@ -85,6 +85,7 @@
         <activity android:name=".RxJava.operators.RxCreateSignActivity" />
         <activity
             android:name=".activity.SurfaceViewTest"
+            android:configChanges="orientation|screenSize"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".DrawerAbout.DrawerLayoutActivity" />
         <activity android:name=".activity.TabHostFragmentTest" />
@@ -209,6 +210,25 @@
         <activity
             android:name=".activity.ViewHandlerActivity"
             android:label="@string/title_activity_view_handler" >
+        </activity>
+        <activity
+            android:name=".activity.SendedMessageActivity"
+            android:label="@string/title_activity_sended_message" >
+        </activity>
+        <activity
+            android:name=".activity.HandlerTestActivity"
+            android:label="@string/title_activity_handler_test"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".activity.LinkedBlockingDequeTest"
+            android:label="@string/title_activity_glsurface_view_test"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".activity.WebSocketActivity"
+            android:label="@string/title_activity_web_socket" >
         </activity>
     </application>
 

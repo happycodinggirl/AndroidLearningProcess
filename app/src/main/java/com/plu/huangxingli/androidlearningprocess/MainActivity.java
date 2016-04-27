@@ -1,34 +1,32 @@
 package com.plu.huangxingli.androidlearningprocess;
 
-import android.animation.AnimatorSet;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.util.ArrayMap;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 
 import com.plu.huangxingli.androidlearningprocess.AnimateAbout.AnimateActivity;
-import com.plu.huangxingli.androidlearningprocess.AnimateAbout.ArcActivity;
 import com.plu.huangxingli.androidlearningprocess.AnimateAbout.GiftAnimationActivity;
 import com.plu.huangxingli.androidlearningprocess.AnimateAbout.TestArcAnimActivity;
 import com.plu.huangxingli.androidlearningprocess.DrawerAbout.DrawerLayoutActivity;
 import com.plu.huangxingli.androidlearningprocess.FileAbout.FileActivity;
 import com.plu.huangxingli.androidlearningprocess.FloatWindow.FloatWindowActivity;
 import com.plu.huangxingli.androidlearningprocess.RxJava.RXCatogry;
-import com.plu.huangxingli.androidlearningprocess.RxJava.RxJavaActivity;
 import com.plu.huangxingli.androidlearningprocess.TimerAbout.TimerActivity;
 import com.plu.huangxingli.androidlearningprocess.ToastAbout.ToastActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.CustomViewActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.DanmuKuActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.FrameWorkTest;
+import com.plu.huangxingli.androidlearningprocess.activity.LinkedBlockingDequeTest;
+import com.plu.huangxingli.androidlearningprocess.activity.HandlerTestActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.HandlerThreadActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.ImageActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.LongImageViewActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.MAnimateTest;
 import com.plu.huangxingli.androidlearningprocess.activity.PopupAnimateActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.SelfRcViewActivity;
+import com.plu.huangxingli.androidlearningprocess.activity.SendedMessageActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.TabHostFragmentTest;
 import com.plu.huangxingli.androidlearningprocess.activity.TestActivityTask;
 import com.plu.huangxingli.androidlearningprocess.activity.TestFontActivity;
@@ -40,8 +38,6 @@ import com.plu.huangxingli.androidlearningprocess.activity.TimerTextViewActivity
 import com.plu.huangxingli.androidlearningprocess.activity.ViewHandlerActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.ViewMeasureActivity;
 import com.plu.huangxingli.androidlearningprocess.bmobAbout.BomboActivity;
-import com.plu.huangxingli.androidlearningprocess.fragment.TabHostFragment1;
-import com.plu.huangxingli.androidlearningprocess.mvp.MvpActivity;
 import com.plu.huangxingli.androidlearningprocess.realMvp.view.ArticleListActivity;
 import com.plu.huangxingli.androidlearningprocess.retrofit.Main2Activity;
 import com.plu.huangxingli.androidlearningprocess.serviceAbout.ServiceActivity;
@@ -115,6 +111,11 @@ public class MainActivity extends BaseActivity {
         lessonMap.put("AnimatorSet测试", com.plu.huangxingli.androidlearningprocess.activity.AnimatorSet.class);
         lessonMap.put("字体测试", TestFontActivity.class);
         lessonMap.put("view自带handler的使用", ViewHandlerActivity.class);
+
+        lessonMap.put("sendMessageDelayed探秘", SendedMessageActivity.class);
+        lessonMap.put("handler测试", HandlerTestActivity.class);
+        lessonMap.put("消息队列测试",LinkedBlockingDequeTest.class);
+
 
 
 

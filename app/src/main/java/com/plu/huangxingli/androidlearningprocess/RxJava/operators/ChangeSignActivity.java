@@ -11,17 +11,20 @@ import com.plu.huangxingli.androidlearningprocess.Utils.PluLogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnLongClick;
+import rx.Notification;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.functions.Func2;
 import rx.observables.GroupedObservable;
+import rx.observables.SyncOnSubscribe;
 import rx.subscriptions.CompositeSubscription;
 
 public class ChangeSignActivity extends BaseActivity {
@@ -141,6 +144,31 @@ public class ChangeSignActivity extends BaseActivity {
         mCompositeSubscription.add(groupBySubscriber);
         mCompositeSubscription.add(scanSubscriber);
         mCompositeSubscription.add(windowSubscriber);
+        PluLogUtil.log("------before ________________");
+       /* Observable.just("lily", "lucy").startWith(Observable.create(new Observable.OnSubscribe<String>() {
+            @Override
+            public void call(Subscriber<? super String> subscriber) {
+                subscriber.onNext("haha i am start");
+                subscriber.onCompleted();
+            }
+        })).doOnEach(Observable.timer(3,TimeUnit.SECONDS).asObservable()).subscribe(new Subscriber<String>() {
+            @Override
+            public void onCompleted() {
+                PluLogUtil.log("----onCompleted");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                PluLogUtil.log("--onError is " + e.getMessage());
+            }
+
+            @Override
+            public void onNext(String s) {
+                PluLogUtil.log("----onNext sis " + s);
+
+            }
+        });*/
+
     }
 
     private void createWindowSubscriber() {
