@@ -27,6 +27,7 @@ import com.plu.huangxingli.androidlearningprocess.activity.MAnimateTest;
 import com.plu.huangxingli.androidlearningprocess.activity.PopupAnimateActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.SelfRcViewActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.SendedMessageActivity;
+import com.plu.huangxingli.androidlearningprocess.activity.StartActivityForResultTest;
 import com.plu.huangxingli.androidlearningprocess.activity.TabHostFragmentTest;
 import com.plu.huangxingli.androidlearningprocess.activity.TestActivityTask;
 import com.plu.huangxingli.androidlearningprocess.activity.TestFontActivity;
@@ -115,6 +116,7 @@ public class MainActivity extends BaseActivity {
         lessonMap.put("sendMessageDelayed探秘", SendedMessageActivity.class);
         lessonMap.put("handler测试", HandlerTestActivity.class);
         lessonMap.put("消息队列测试",LinkedBlockingDequeTest.class);
+        lessonMap.put("startActivityForResult的fragment测试",StartActivityForResultTest.class);
 
 
 

@@ -53,5 +53,9 @@
     <string name="title_activity_handler_test">HandlerTestActivity</string>
     <string name="title_activity_glsurface_view_test">GLSurfaceViewTest</string>
     <string name="title_activity_web_socket">WebSocketActivity</string>
+    <string name="title_activity_start_activity_for_result_test">StartActivityForResultTest</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">跳转到其他页</string>
 
 </resources>
