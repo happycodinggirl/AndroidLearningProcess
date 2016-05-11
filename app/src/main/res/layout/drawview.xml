@@ -5,6 +5,16 @@
 
     <com.plu.huangxingli.androidlearningprocess.activity.DrawView
         android:id="@+id/drawview"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/tv_test"
+        android:paddingTop="3px"
+        android:layout_marginTop="10dp"
+        android:padding="20dp"
+        android:text="hahahahhahahhahahhah"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
