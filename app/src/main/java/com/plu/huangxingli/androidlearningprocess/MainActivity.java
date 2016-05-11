@@ -17,6 +17,7 @@ import com.plu.huangxingli.androidlearningprocess.TimerAbout.TimerActivity;
 import com.plu.huangxingli.androidlearningprocess.ToastAbout.ToastActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.CustomViewActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.DanmuKuActivity;
+import com.plu.huangxingli.androidlearningprocess.activity.DrawViewActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.FrameWorkTest;
 import com.plu.huangxingli.androidlearningprocess.activity.LinkedBlockingDequeTest;
 import com.plu.huangxingli.androidlearningprocess.activity.HandlerTestActivity;
@@ -117,6 +118,7 @@ public class MainActivity extends BaseActivity {
         lessonMap.put("handler测试", HandlerTestActivity.class);
         lessonMap.put("消息队列测试",LinkedBlockingDequeTest.class);
         lessonMap.put("startActivityForResult的fragment测试",StartActivityForResultTest.class);
+        lessonMap.put("在view上画bitmap", DrawViewActivity.class);
 
 
 
