@@ -1,6 +1,8 @@
 package com.plu.huangxingli.androidlearningprocess.view;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -17,6 +19,7 @@ import java.security.spec.PKCS8EncodedKeySpec;
  */
 public class CustomView extends TextView {
     int windowWidth,windowHeight;
+    private ColorStateList colorStateList;
 
     public CustomView(Context context) {
         super(context);
@@ -37,6 +40,22 @@ public class CustomView extends TextView {
         DisplayMetrics displayMetrics=getResources().getDisplayMetrics();
         windowWidth=displayMetrics.widthPixels;
         windowHeight=displayMetrics.heightPixels;
+        int[][] viewState=new int[3][];
+
+        int[] colors=new int[3];
+        int i=0;
+        viewState[i]=SELECTED_STATE_SET;
+        colors[i]=getResources().getColor(android.R.color.holo_orange_dark);
+        i++;
+        viewState[i]=EMPTY_STATE_SET;
+        colors[i]=getResources().getColor(android.R.color.black);
+        i++;
+        viewState[i]=PRESSED_ENABLED_FOCUSED_SELECTED_STATE_SET;
+        colors[i]=getResources().getColor(android.R.color.holo_green_dark);
+        colorStateList = new ColorStateList(viewState,colors);
+        setTextColor(colorStateList);
+
+
 
     }
 
@@ -59,5 +78,11 @@ public class CustomView extends TextView {
         //setMeasuredDimension(widthMespec,heightMespec);
         super.onMeasure(widthMeasureSpec,heightMeasureSpec);
         PluLogUtil.log(" 11111111 getWidth is "+getMeasuredWidth()+" height is "+getMeasuredHeight());
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+
     }
 }
