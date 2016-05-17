@@ -8,9 +8,24 @@
     tools:context="com.plu.huangxingli.androidlearningprocess.activity.CustomViewActivity">
 
     <com.plu.huangxingli.androidlearningprocess.view.SimpleCustomView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="100dp"
+        android:id="@+id/simpleCustomView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:padding="10dp"
         />
+
+
+    <com.plu.huangxingli.androidlearningprocess.view.SimpleCustomView
+        android:id="@+id/simpleCustomView_handler"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:padding="5dp"
+        android:layout_alignParentBottom="true"
+        />
+
+
+
+
 
 </RelativeLayout>

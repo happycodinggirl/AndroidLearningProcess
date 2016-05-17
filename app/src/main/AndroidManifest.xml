@@ -228,6 +228,8 @@
             android:label="@string/title_activity_start_activity_for_result_test"></activity>
 
         <activity android:name=".activity.DrawViewActivity"/>
+
+        <activity android:name=".pulltoRefresh.PullToRefreshActivity"/>
     </application>
 
 </manifest>

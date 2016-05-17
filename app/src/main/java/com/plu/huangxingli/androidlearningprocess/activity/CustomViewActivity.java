@@ -9,13 +9,17 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.plu.huangxingli.androidlearningprocess.BaseActivity;
 import com.plu.huangxingli.androidlearningprocess.R;
+import com.plu.huangxingli.androidlearningprocess.Utils.PluLogUtil;
 import com.plu.huangxingli.androidlearningprocess.Utils.SilentInstall;
+import com.plu.huangxingli.androidlearningprocess.view.SimpleCustomView;
 
 import java.io.File;
 
@@ -23,26 +27,61 @@ public class CustomViewActivity extends BaseActivity {
 
     private String apkPath="/sdcard/360/app-release.apk";
 
+    int minTouchDis;
+    int lastY=0;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_view);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        final SimpleCustomView simpleCustomView=findView(R.id.simpleCustomView);
+        final SimpleCustomView simpleCustomView_handler=findView(R.id.simpleCustomView_handler);
+        minTouchDis=ViewConfiguration.get(getApplicationContext()).getScaledTouchSlop();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        simpleCustomView_handler.setOnTouchListener(new View.OnTouchListener() {
+
+
             @Override
-            public void onClick(View view) {
+            public boolean onTouch(View v, MotionEvent event) {
+               // PluLogUtil.eLog("----onTouch ");
+                int action=event.getAction();
+                int x= (int) event.getX();
 
-                onSilentInstall();
+                int nowX;
+                int nowY = 0;
+                int y=0;
+
+                switch (action){
+                    case MotionEvent.ACTION_DOWN:
+                        y= (int) event.getY();
+                        break;
+
+                    case MotionEvent.ACTION_MOVE:
+                        nowX = (int) event.getX();
+                        nowY = (int) event.getY();
+                        int dey=nowY-y;
+                        PluLogUtil.eLog("----dey is "+dey+"  min touch dis is "+minTouchDis);
+                        if (dey> minTouchDis){
+
+                            simpleCustomView.offsetTopAndBottom(nowY-lastY);
+                            PluLogUtil.log("------dey > offsetTopAndBottom  dis is "+(nowY-lastY)+"nowY:"+nowY+"lastY:"+lastY);
+                            lastY=nowY;
+
+                        }
+                        break;
+                    case MotionEvent.ACTION_UP:
 
 
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                        break;
+                }
+                return true;
             }
         });
     }
+
+
 
     /**
      * 判断手机是否拥有Root权限。

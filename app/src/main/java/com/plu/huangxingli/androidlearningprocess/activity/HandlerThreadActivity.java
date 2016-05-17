@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.plu.huangxingli.androidlearningprocess.BaseActivity;
 import com.plu.huangxingli.androidlearningprocess.Utils.PluLogUtil;
+import com.plu.huangxingli.androidlearningprocess.bean.Student;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -23,6 +24,19 @@ public class HandlerThreadActivity extends BaseActivity{
         ExecutorService executorService= Executors.newCachedThreadPool();
         HandlerThread handlerThread=new HandlerThread("test");
         executorService.execute(new MyHandlerThread("TEST"));
+        MyHandler myHandler=new MyHandler();
+        Student student=new Student("lily");
+        Message message1=Message.obtain();
+        message1.obj=student;
+        message1.what=0;
+        myHandler.sendMessageDelayed(message1, 4000);
+        student.setName("lucy");
+
+        Message message2=Message.obtain();
+        message2.what=1;
+        message2.obj=student;
+        myHandler.sendMessageDelayed(message2,1000);
+
      /*   Handler handler=new MyHandler(handlerThread.getLooper());
         Message message=handler.obtainMessage();
         message.sendToTarget();*/
@@ -39,6 +53,7 @@ public class HandlerThreadActivity extends BaseActivity{
         @Override
         public void run() {
             super.run();
+
             PluLogUtil.log(HandlerThreadActivity.class,"0---myHandleThread run thread name is "+Thread.currentThread().getName());
         }
     }
@@ -46,8 +61,8 @@ public class HandlerThreadActivity extends BaseActivity{
     class MyHandler extends Handler{
 
 
-        public MyHandler(Looper looper) {
-            super(looper);
+        public MyHandler() {
+            super();
 
         }
 
@@ -55,6 +70,16 @@ public class HandlerThreadActivity extends BaseActivity{
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             PluLogUtil.log(HandlerThreadActivity.class,"---handleMsg");
+            switch (msg.what){
+                case 0:
+                    Student student= (Student) msg.obj;
+                    PluLogUtil.eLog("---000000 name is "+student.getName());
+                    break;
+                case 1:
+                    Student student1= (Student) msg.obj;
+                    PluLogUtil.eLog("-----1111111 name is "+student1.getName());
+                    break;
+            }
 
         }
     }

@@ -7,6 +7,9 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.plu.huangxingli.androidlearningprocess.Utils.PluLogUtil;
+import com.plu.huangxingli.androidlearningprocess.activity.MessageActivity;
+
 /**
  * Created by lenovo on 2016/3/7.
  */
@@ -32,6 +35,27 @@ public class SimpleCustomView extends View {
         mPaint.setColor(Color.RED);
     }
 
+   /* @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int mode= MeasureSpec.getMode(heightMeasureSpec);
+       switch (mode){
+            case MeasureSpec.AT_MOST:
+                PluLogUtil.eLog("mode:AT_MOST");
+
+                break;
+            case MeasureSpec.EXACTLY:
+                PluLogUtil.eLog("mode:EXACTLY");
+                int height1=getLayoutParams().height;
+                int height=MeasureSpec.getSize(heightMeasureSpec);
+                int width=MeasureSpec.getSize(widthMeasureSpec);
+                PluLogUtil.eLog("--width is "+width+" height is "+height+" layoutParam height is" + height1);
+                setMeasuredDimension(width,height1);
+                break;
+        }
+
+    }*/
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -42,6 +66,7 @@ public class SimpleCustomView extends View {
         int paddingTop=getPaddingTop();
         int radius=Math.min(width, height)/2;
         canvas.drawCircle(paddingLfet+width/2,paddingTop+height/2,radius,mPaint);
+        PluLogUtil.eLog("onDraw measureHeight is "+getMeasuredHeight()+" measureWidth is "+getMeasuredWidth()+"radis:"+radius);
 
 
 

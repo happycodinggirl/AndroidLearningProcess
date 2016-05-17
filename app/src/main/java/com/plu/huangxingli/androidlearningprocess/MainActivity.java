@@ -40,6 +40,7 @@ import com.plu.huangxingli.androidlearningprocess.activity.TimerTextViewActivity
 import com.plu.huangxingli.androidlearningprocess.activity.ViewHandlerActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.ViewMeasureActivity;
 import com.plu.huangxingli.androidlearningprocess.bmobAbout.BomboActivity;
+import com.plu.huangxingli.androidlearningprocess.pulltoRefresh.PullToRefreshActivity;
 import com.plu.huangxingli.androidlearningprocess.realMvp.view.ArticleListActivity;
 import com.plu.huangxingli.androidlearningprocess.retrofit.Main2Activity;
 import com.plu.huangxingli.androidlearningprocess.serviceAbout.ServiceActivity;
@@ -119,6 +120,7 @@ public class MainActivity extends BaseActivity {
         lessonMap.put("消息队列测试",LinkedBlockingDequeTest.class);
         lessonMap.put("startActivityForResult的fragment测试",StartActivityForResultTest.class);
         lessonMap.put("在view上画bitmap", DrawViewActivity.class);
+        lessonMap.put("下拉刷新测试", PullToRefreshActivity.class);
 
 
 

@@ -13,6 +13,9 @@ import com.plu.huangxingli.androidlearningprocess.Utils.PluLogUtil;
 
 import java.security.spec.PKCS8EncodedKeySpec;
 
+import rx.Subscriber;
+import rx.Subscription;
+
 /**
  * Created by lily on 16-5-10.
  */
@@ -55,6 +58,8 @@ public class DrawViewActivity extends BaseActivity {
         });
 
     }
+
+
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {

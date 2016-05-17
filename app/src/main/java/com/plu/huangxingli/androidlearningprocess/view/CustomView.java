@@ -40,7 +40,7 @@ public class CustomView extends TextView {
         DisplayMetrics displayMetrics=getResources().getDisplayMetrics();
         windowWidth=displayMetrics.widthPixels;
         windowHeight=displayMetrics.heightPixels;
-        int[][] viewState=new int[3][];
+       /* int[][] viewState=new int[3][];
 
         int[] colors=new int[3];
         int i=0;
@@ -53,7 +53,7 @@ public class CustomView extends TextView {
         viewState[i]=PRESSED_ENABLED_FOCUSED_SELECTED_STATE_SET;
         colors[i]=getResources().getColor(android.R.color.holo_green_dark);
         colorStateList = new ColorStateList(viewState,colors);
-        setTextColor(colorStateList);
+        setTextColor(colorStateList);*/
 
 
 
