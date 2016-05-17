@@ -11,7 +11,6 @@ import android.widget.FrameLayout;
 
 import com.plu.huangxingli.androidlearningprocess.Utils.PluLogUtil;
 
-import okhttp3.internal.ws.RealWebSocket;
 
 /**
  * Created by lily on 16-5-13.
@@ -20,6 +19,10 @@ public class PtrFrameLayout extends FrameLayout {
 
     private View mHeaderView;
     private View mContentView;
+
+    private PtrHeaderHandler mPtrHandler;
+
+
     private int nowY;
 
     private int minTouchDis;
@@ -27,7 +30,7 @@ public class PtrFrameLayout extends FrameLayout {
     private int lastY;
 
 
-    private int maxOffsetDis = 200;
+    private int maxOffsetDis = 300;
     private int downX;
     private int downY;
 
@@ -53,6 +56,23 @@ public class PtrFrameLayout extends FrameLayout {
 
     public void setHeaderView(View mHeaderView) {
         this.mHeaderView = mHeaderView;
+        if (mHeaderView instanceof PtrHeaderView){
+            mPtrHandler= (PtrHeaderHandler) mHeaderView;
+        }
+    }
+
+    @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+        int childCount=getChildCount();
+        if (childCount>0){
+            for(int i=0;i<childCount;i++){
+                View view=getChildAt(i);
+                if (view instanceof PtrHeaderHandler){
+                    mPtrHandler= (PtrHeaderHandler) view;
+                }
+            }
+        }
     }
 
     public void setContentView(View mContentView) {
@@ -74,10 +94,17 @@ public class PtrFrameLayout extends FrameLayout {
                 break;
             case MotionEvent.ACTION_MOVE:
                 int dis=y-lastY;
-                PluLogUtil.log("----dis is " + dis + " y : " + y + ", lastY:" + lastY);
+                PluLogUtil.log("----dis is " + dis + " y : " + y + ", downY:" + downY);
+                if (y-downY>maxOffsetDis){
+                    return true;
+                }
                 mContentView.offsetTopAndBottom(dis);
                 PluLogUtil.eLog("ddelY > min, nowY: " + nowY + "lastY:" + lastY + " offset : " + (nowY - lastY));
                 lastY = y;
+                if (mPtrHandler!=null) {
+                    mPtrHandler.onOffsetChange(dis);
+                }
+
                 /*MotionEvent motionEvent=MotionEvent.obtain(event);
                 motionEvent.setAction(MotionEvent.ACTION_UP);
                 mContentView.onTouchEvent(motionEvent);*/
@@ -102,6 +129,8 @@ public class PtrFrameLayout extends FrameLayout {
         switch (action){
             case MotionEvent.ACTION_DOWN:
                 lastY= (int) ev.getY();
+                downX = (int) ev.getX();
+                downY = (int) ev.getY();
                 break;
             case MotionEvent.ACTION_MOVE:
 
