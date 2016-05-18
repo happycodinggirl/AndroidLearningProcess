@@ -6,4 +6,6 @@ package com.plu.huangxingli.androidlearningprocess.pulltoRefresh;
 public interface PtrHeaderHandler {
 
     void onOffsetChange(int offset);
+
+    void onAnimAway(int offset);
 }

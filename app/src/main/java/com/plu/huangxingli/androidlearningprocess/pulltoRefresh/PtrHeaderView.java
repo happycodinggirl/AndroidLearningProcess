@@ -48,12 +48,12 @@ public class PtrHeaderView extends LinearLayout implements PtrHeaderHandler {
         setOrientation(HORIZONTAL);
         LayoutInflater inflater=LayoutInflater.from(context);
         eggView = new EggView(context);
-        eggView.setLayoutParams(new MarginLayoutParams(240,240));
+        eggView.setLayoutParams(new MarginLayoutParams(240, 240));
         addView(eggView);
-        View headView=inflater.inflate(R.layout.head_text_layout,null);
+        View headView=inflater.inflate(R.layout.head_text_layout,this,true);
         mPullStateTv= (TextView) headView.findViewById(R.id.tv_state);
         mPullTimeTv= (TextView) headView.findViewById(R.id.tv_time);
-        addView(headView);
+      //  addView(headView);
 
     }
 
@@ -83,5 +83,11 @@ public class PtrHeaderView extends LinearLayout implements PtrHeaderHandler {
         }
         eggView.movePosition(offset);
 
+    }
+
+    @Override
+    public void onAnimAway(int offset) {
+       // eggView.setCurrentState(EggView.STATE_MOVING);
+        eggView.movePosition(offset);
     }
 }

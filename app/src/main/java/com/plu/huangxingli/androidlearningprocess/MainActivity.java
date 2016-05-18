@@ -19,6 +19,7 @@ import com.plu.huangxingli.androidlearningprocess.activity.CustomViewActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.DanmuKuActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.DrawViewActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.FrameWorkTest;
+import com.plu.huangxingli.androidlearningprocess.activity.IntrestingActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.LinkedBlockingDequeTest;
 import com.plu.huangxingli.androidlearningprocess.activity.HandlerTestActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.HandlerThreadActivity;
@@ -121,6 +122,7 @@ public class MainActivity extends BaseActivity {
         lessonMap.put("startActivityForResult的fragment测试",StartActivityForResultTest.class);
         lessonMap.put("在view上画bitmap", DrawViewActivity.class);
         lessonMap.put("下拉刷新测试", PullToRefreshActivity.class);
+        lessonMap.put("测试一些不常用但很意思的属性", IntrestingActivity.class);
 
 
 

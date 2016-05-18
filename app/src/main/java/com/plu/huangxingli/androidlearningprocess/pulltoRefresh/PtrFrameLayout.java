@@ -228,13 +228,15 @@ public class PtrFrameLayout extends FrameLayout {
 
     private void animBack(){
         PluLogUtil.eLog("---mCurrentTop is " + mCurrentTop);
-        ValueAnimator valueAnimator=ValueAnimator.ofInt(mCurrentTop,0);
+        final ValueAnimator valueAnimator=ValueAnimator.ofInt(mCurrentTop,0);
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 int animValue = (int) animation.getAnimatedValue();
                 PluLogUtil.eLog("--animValue is " + animValue);
+                mPtrHandler.onAnimAway(animValue);
                 mContentView.setTop(animValue);
+
             }
         });
 
