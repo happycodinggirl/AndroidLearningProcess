@@ -62,6 +62,7 @@
         <activity
             android:name=".serviceAbout.ServiceActivity$InnerActivity"
             android:label="@string/title_activity_second" />
+        <activity android:name=".activity.IntrestingActivity"/>
         <activity android:name=".SecondActivity">
             <intent-filter>
                 <action android:name="com.google.app.myapp.plu" />

@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.plu.huangxingli.androidlearningprocess.R;
+import com.plu.huangxingli.androidlearningprocess.Utils.PluLogUtil;
 import com.plu.huangxingli.androidlearningprocess.fragment.InnerFragment;
 
 /**
@@ -54,6 +55,11 @@ public class EggView extends View {
         init();
     }
 
+    public void setCurrentState(int currentState) {
+        this.currentState = currentState;
+
+    }
+
     private void init(){
         mFullEgg= BitmapFactory.decodeResource(getResources(), R.drawable.egg0);
         mEggTop=BitmapFactory.decodeResource(getResources(),R.drawable.egg2);
@@ -69,33 +75,40 @@ public class EggView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        PluLogUtil.log("--eggView-onDraw");
         switch (currentState){
             case STATE_INIT:
+                PluLogUtil.log("----mFullEgg width "+(getWidth()/2-mFullEgg.getWidth()/2)+"height is "+(getHeight()/2-mFullEgg.getHeight()/2));
                 canvas.drawBitmap(mFullEgg,getWidth()/2-mFullEgg.getWidth()/2,getHeight()/2-mFullEgg.getHeight()/2,mPaint);
                 break;
             case STATE_ON://wave动画，小龙翅膀在闪动
-                Bitmap drawingBp=movingBitmap[currentState];
+                Bitmap drawingBp=movingBitmap[currentWavingIndex];
                 canvas.drawBitmap(drawingBp,getWidth()/2-drawingBp.getWidth()/2,getHeight()/2-drawingBp.getHeight()/2,mPaint);
 
                 currentWavingIndex=(currentWavingIndex+1)%movingBitmap.length;
+                PluLogUtil.log("---onDraw currentWavingIndex is "+currentWavingIndex);
                 postInvalidateDelayed(150);
                 break;
             case STATE_MOVING:
                 canvas.drawBitmap(mEggTop,getWidth()/2-mEggTop.getWidth()/2,getHeight()/2-mEggTop.getHeight()/2-currentOffset/2,mPaint);
+                canvas.drawBitmap(mEggMoving1,getWidth()/2-mEggMoving1.getWidth()/2,getHeight()/2-mEggMoving1.getHeight()/2,mPaint);
                 break;
         }
     }
 
     public void movePosition(int offset){
-        currentState=offset;
+        currentOffset=offset;
+        PluLogUtil.log("----offset is " + offset);
         if (offset>=0){
             if (offset>maxOffset/2){
                 currentState=STATE_MOVING;
             }else {
                 currentState = STATE_INIT;
             }
-        }else{
-            currentState=STATE_MOVING;
+        }else {
+            if (Math.abs(offset)<maxOffset) {
+                currentState = STATE_MOVING;
+            }
         }
         invalidate();
     }
