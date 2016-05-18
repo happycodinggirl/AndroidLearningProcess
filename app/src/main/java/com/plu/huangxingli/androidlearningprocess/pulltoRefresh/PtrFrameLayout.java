@@ -139,9 +139,15 @@ public class PtrFrameLayout extends FrameLayout {
             case MotionEvent.ACTION_UP:
                 PluLogUtil.log("----onTouchEvent ACTION_UP");
                 PluLogUtil.eLog("left:" + mContentView.getLeft() + ",top:" + mContentView.getTop() + ",right:" + mContentView.getRight() + ",bottom:" + mContentView.getMeasuredHeight());
-                ((PtrHeaderView)mHeaderView).setCurrentState(EggView.STATE_ON);
-                if (mOnRefreshListener!=null){
-                    mOnRefreshListener.onRefresh();
+                PluLogUtil.log("----y - downY is "+(y-downY)+" y is "+y+" downY is "+downY);
+                if ((y-downY)>maxOffsetDis/2) {
+                    ((PtrHeaderView) mHeaderView).setCurrentState(EggView.STATE_ON);
+                    if (mOnRefreshListener != null) {
+                        mOnRefreshListener.onRefresh();
+                    }
+                }else{
+                    mCurrentTop=0;
+                    mContentView.layout(mContentView.getLeft(), 0, mContentView.getRight(), mContentView.getMeasuredHeight());
                 }
                 //mContentView.layout(mContentView.getLeft(), 0, mContentView.getRight(), mContentView.getMeasuredHeight());
                // mContentView.onTouchEvent(event);
@@ -178,7 +184,7 @@ public class PtrFrameLayout extends FrameLayout {
                 lastY=0;
                 break;
         }
-        boolean dispatchTouchEvent=super.dispatchTouchEvent(ev);
+        boolean dispatchTouchEvent = super.dispatchTouchEvent(ev);
         PluLogUtil.log("---dispatchTouchEvent result is " + dispatchTouchEvent);
         return dispatchTouchEvent;
     }
