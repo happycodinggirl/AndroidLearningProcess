@@ -28,7 +28,7 @@ public class ReposListActivity extends BaseActivity {
     RecyclerView mRvList;
 
 
-  //  @Inject Student mStudent;
+    @Inject Student mStudent;
 
     @Inject
     GitHubService mGitHubService;
@@ -47,7 +47,7 @@ public class ReposListActivity extends BaseActivity {
         ListAdapter adapter = new ListAdapter();
         mRvList.setAdapter(adapter);
         loadData(adapter);
-       // PluLogUtil.eLog("-----Inject student name is "+mStudent.getName());
+       PluLogUtil.eLog("-----Inject student name is "+mStudent.getName());
     }
 
     // 加载数据
