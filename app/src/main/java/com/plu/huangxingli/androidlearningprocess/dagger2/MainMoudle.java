@@ -16,8 +16,8 @@ public class MainMoudle {
 
     }
 
-    /*@Provides
+    @Provides
     public com.plu.huangxingli.androidlearningprocess.dagger2.Student provideRealString(){
             return new Student("lily");
-    }*/
+    }
 }
