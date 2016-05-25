@@ -41,6 +41,7 @@ import com.plu.huangxingli.androidlearningprocess.activity.TimerTextViewActivity
 import com.plu.huangxingli.androidlearningprocess.activity.ViewHandlerActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.ViewMeasureActivity;
 import com.plu.huangxingli.androidlearningprocess.bmobAbout.BomboActivity;
+import com.plu.huangxingli.androidlearningprocess.dagger2.TestDagger;
 import com.plu.huangxingli.androidlearningprocess.pulltoRefresh.PullToRefreshActivity;
 import com.plu.huangxingli.androidlearningprocess.realMvp.view.ArticleListActivity;
 import com.plu.huangxingli.androidlearningprocess.retrofit.Main2Activity;
@@ -123,6 +124,7 @@ public class MainActivity extends BaseActivity {
         lessonMap.put("在view上画bitmap", DrawViewActivity.class);
         lessonMap.put("下拉刷新测试", PullToRefreshActivity.class);
         lessonMap.put("测试一些不常用但很意思的属性", IntrestingActivity.class);
+        lessonMap.put("dagger2使用", TestDagger.class);
 
 
 

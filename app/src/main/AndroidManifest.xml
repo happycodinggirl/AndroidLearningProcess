@@ -98,6 +98,9 @@
             android:enabled="true"
             android:exported="true" />
 
+        <activity android:name=".dagger2.ReposListActivity"/>
+        <activity android:name=".dagger2.TestDagger"></activity>
+
         <activity
             android:name=".activity.FrameWorkTest"
             android:label="@string/title_activity_frame_work_test" />
