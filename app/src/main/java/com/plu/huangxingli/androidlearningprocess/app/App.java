@@ -13,7 +13,6 @@ import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 import com.plu.huangxingli.androidlearningprocess.R;
 import com.plu.huangxingli.androidlearningprocess.Utils.PluLogUtil;
-import com.plu.huangxingli.androidlearningprocess.dagger2.DemoComponent;
 import com.plu.huangxingli.androidlearningprocess.dagger2.DemoGraph;
 
 import java.io.File;
@@ -33,7 +32,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         app=this;
-        buildComponentAndInject();
+      //  buildComponentAndInject();
 
 
     }
@@ -47,7 +46,7 @@ public class App extends Application {
     }
 
     private void buildComponentAndInject(){
-       mDemoGraph=DemoComponent.Initial.init(app);
+       // mDemoGraph=DemoComponent.Initial.init(app);
     }
 
 

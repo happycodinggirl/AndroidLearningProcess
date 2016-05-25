@@ -19,6 +19,8 @@ public class TestDagger extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.testdagger);
 
+
+
       //  App.getInstance().component().inject(this); //注意此处因为每使用到任何依赖注入的东西，所以此处可以不注入
 
 

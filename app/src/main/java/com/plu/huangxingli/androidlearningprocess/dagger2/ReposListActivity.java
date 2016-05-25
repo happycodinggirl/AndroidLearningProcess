@@ -28,7 +28,10 @@ public class ReposListActivity extends BaseActivity {
     RecyclerView mRvList;
 
 
-    @Inject Student mStudent;
+    //@Inject Student mStudent;
+
+    @Inject
+    Child mChild;
 
     @Inject
     GitHubService mGitHubService;
@@ -38,8 +41,11 @@ public class ReposListActivity extends BaseActivity {
         setContentView(R.layout.activity_repos_list);
         ButterKnife.bind(this);
 
-       App.getInstance().component().inject(this);//改activity中依赖注入的类时GitHubService 此处必须要注入
-
+       //改activity中依赖注入的类时GitHubService 此处必须要注入
+        SmallComponent smallComponent=DaggerSmallComponent.builder().smallMoudle(new SmallMoudle()).build();//貌似不可有多个component注入同一个Activity,若需要多个component,依靠依赖的方式实现
+        DaggerDemoComponent.builder().smallComponent(smallComponent).mainMoudle(new MainMoudle(App.getInstance())).apiModule(new ApiModule(App.getInstance())).build().inject(this);
+        //DaggerSmallComponent.builder().smallMoudle(new SmallMoudle()).build().inject(this);
+        PluLogUtil.eLog("----mChild age is " + mChild.getAge());
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         mRvList.setLayoutManager(manager);
@@ -47,11 +53,11 @@ public class ReposListActivity extends BaseActivity {
         ListAdapter adapter = new ListAdapter();
         mRvList.setAdapter(adapter);
         loadData(adapter);
-       PluLogUtil.eLog("-----Inject student name is "+mStudent.getName());
+       //PluLogUtil.eLog("-----Inject student name is "+mStudent.getName());
     }
 
     // 加载数据
-    private void loadData(final ListAdapter adapter) {
+   private void loadData(final ListAdapter adapter) {
         mGitHubService.getRepoData("SpikeKing")
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())

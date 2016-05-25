@@ -116,7 +116,7 @@ public class PtrFrameLayout extends FrameLayout {
                 break;
             case MotionEvent.ACTION_MOVE:
                 int dis=y-lastY;
-                PluLogUtil.log("y-downY is " + dis);
+                PluLogUtil.log(" onTouch ACTION_MOVE y-downY is " + dis);
                 if (y-downY>maxOffsetDis){
                     return true;
                 }
@@ -145,10 +145,11 @@ public class PtrFrameLayout extends FrameLayout {
                     if (mOnRefreshListener != null) {
                         mOnRefreshListener.onRefresh();
                     }
-                }else{
+                }
+               /* else{
                     mCurrentTop=0;
                     mContentView.layout(mContentView.getLeft(), 0, mContentView.getRight(), mContentView.getMeasuredHeight());
-                }
+                }*/
                 //mContentView.layout(mContentView.getLeft(), 0, mContentView.getRight(), mContentView.getMeasuredHeight());
                // mContentView.onTouchEvent(event);
                 lastY=0;
@@ -163,7 +164,7 @@ public class PtrFrameLayout extends FrameLayout {
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
         PluLogUtil.eLog("----onLayout");
-        mContentView.layout(getLeft(),mCurrentTop,getRight(),mCurrentTop+mContentView.getMeasuredHeight());
+        mContentView.layout(getLeft(), mCurrentTop, getRight(), mCurrentTop + mContentView.getMeasuredHeight());
     }
 
     @Override
@@ -177,6 +178,9 @@ public class PtrFrameLayout extends FrameLayout {
                 break;
             case MotionEvent.ACTION_MOVE:
 
+              /*  MotionEvent event=MotionEvent.obtain(ev);
+                event.setAction(MotionEvent.ACTION_UP);
+                mContentView.onTouchEvent(event);*/
 
                 PluLogUtil.log("---dispatchTouchEvent Action move lastY : "+lastY);
                 break;
@@ -208,8 +212,9 @@ public class PtrFrameLayout extends FrameLayout {
         if (action==MotionEvent.ACTION_MOVE){
             int dis= (int) (ev.getY()-lastY);
             PluLogUtil.log("--onIntercept-dis is "+dis+" ev.getY "+ev.getY()+" lastY : "+lastY);
+            PluLogUtil.eLog("---------mContent getTop is "+mContentView.getTop());
+            if (dis>0&&!canScroll||mContentView.getTop()>0){
 
-            if (dis>0&&!canScroll){
                 PluLogUtil.log("--onInterceptTouchEvent-return true mCOntentView getY is "+mContentView.getY());
                 return true;
             }else{

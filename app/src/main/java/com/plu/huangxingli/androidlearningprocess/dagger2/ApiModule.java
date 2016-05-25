@@ -1,3 +1,4 @@
+
 package com.plu.huangxingli.androidlearningprocess.dagger2;
 
 import com.plu.huangxingli.androidlearningprocess.app.App;
@@ -13,6 +14,7 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 /**
  * Created by lily on 16-5-25.
  */
+
 @Module
 public class ApiModule {
 
@@ -30,3 +32,4 @@ public class ApiModule {
         return retrofit.create(GitHubService.class);
     }
 }
+
