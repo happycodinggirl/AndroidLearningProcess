@@ -28,7 +28,8 @@ public class ReposListActivity_Sub extends BaseActivity {
     RecyclerView mRvList;
 
 
-    @Inject Student mStudent;
+    @Inject
+    Student mStudent;
 
     @Inject
     Child mChild;
@@ -36,23 +37,18 @@ public class ReposListActivity_Sub extends BaseActivity {
     @Inject
     GitHubService mGitHubService;
 
-    @Override protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_repos_list);
         ButterKnife.bind(this);
 
-       DemoComponent demoComponent= DaggerDemoComponent.builder().apiModule(new ApiModule()).mainMoudle(new MainMoudle()).build();
-      // DemoComponent demoComponent1=DaggerDemoComponent.create();
-       //改activity中依赖注入的类时GitHubService 此处必须要注入
-       // SmallComponent smallComponent=DaggerSmallComponent.builder().smallMoudle(new SmallMoudle()).build();//貌似不可有多个component注入同一个Activity,若需要多个component,依靠依赖的方式实现
-     //  demoComponent.inject(this);
-        SmallComponent smallComponent=demoComponent.provideSmalllComponent();
-
+        DemoComponent demoComponent = DaggerDemoComponent.builder().apiModule(new ApiModule()).mainMoudle(new MainMoudle()).build();
+        SmallComponent smallComponent = demoComponent.provideSmalllComponent();  //此处注意provideSmallComponent里面不要传mould进去,它所依赖的
+        //的mould在父component处就被注入了
         smallComponent.inject(this);
 
-       // DaggerDemoComponent.builder().smallComponent(smallComponent).mainMoudle(new MainMoudle(App.getInstance())).apiModule(new ApiModule(App.getInstance())).build().inject(this);
-        //DaggerSmallComponent.builder().smallMoudle(new SmallMoudle()).build().inject(this);
-        PluLogUtil.eLog("----mChild first name is " + mChild.getFirstName()+"  secondName is "+mChild.getSecondName());
+        PluLogUtil.eLog("----mChild first name is " + mChild.getFirstName() + "  secondName is " + mChild.getSecondName()+"  student name is "+mStudent.getName());
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         mRvList.setLayoutManager(manager);
@@ -60,11 +56,11 @@ public class ReposListActivity_Sub extends BaseActivity {
         ListAdapter adapter = new ListAdapter();
         mRvList.setAdapter(adapter);
         loadData(adapter);
-       //PluLogUtil.eLog("-----Inject student name is "+mStudent.getName());
+
     }
 
     // 加载数据
-   private void loadData(final ListAdapter adapter) {
+    private void loadData(final ListAdapter adapter) {
         mGitHubService.getRepoData("SpikeKing")
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -81,7 +77,7 @@ public class ReposListActivity_Sub extends BaseActivity {
 
                     @Override
                     public void onNext(ArrayList<ListAdapter.Repo> repos) {
-                            adapter.setRepos(repos);
+                        adapter.setRepos(repos);
                     }
                 });
     }
