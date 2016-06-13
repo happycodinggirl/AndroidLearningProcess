@@ -1,8 +1,7 @@
 
-package com.plu.huangxingli.androidlearningprocess.dagger2;
+package com.plu.huangxingli.androidlearningprocess.dagger2.denpendencycomponent;
 
 import com.plu.huangxingli.androidlearningprocess.app.App;
-import com.plu.huangxingli.androidlearningprocess.dagger2.Student;
 
 import dagger.Module;
 import dagger.Provides;
@@ -20,7 +19,7 @@ public class MainMoudle {
     }
 
     @Provides
-    public com.plu.huangxingli.androidlearningprocess.dagger2.Student provideRealString(){
+    public Student provideRealString(){
             return new Student("lily");
     }
 }

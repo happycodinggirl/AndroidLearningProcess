@@ -1,4 +1,4 @@
-package com.plu.huangxingli.androidlearningprocess.dagger2;
+package com.plu.huangxingli.androidlearningprocess.dagger2.denpendencycomponent;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.plu.huangxingli.androidlearningprocess.dagger2;
+package com.plu.huangxingli.androidlearningprocess.dagger2.subcomponent;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

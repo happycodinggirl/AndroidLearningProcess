@@ -1,7 +1,5 @@
 
-package com.plu.huangxingli.androidlearningprocess.dagger2;
-
-import com.plu.huangxingli.androidlearningprocess.app.App;
+package com.plu.huangxingli.androidlearningprocess.dagger2.subcomponent;
 
 import javax.inject.Singleton;
 
@@ -15,10 +13,11 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
  * Created by lily on 16-5-25.
  */
 
+@UserScope
 @Module
 public class ApiModule {
 
-    public ApiModule(App app) {
+    public ApiModule() {
     }
 
     @Provides

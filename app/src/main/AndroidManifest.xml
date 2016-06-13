@@ -98,8 +98,8 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".dagger2.ReposListActivity"/>
-        <activity android:name=".dagger2.TestDagger"></activity>
+        <activity android:name=".dagger2.denpendencycomponent.ReposListActivity"/>
+        <activity android:name=".dagger2.denpendencycomponent.TestDagger"></activity>
 
         <activity
             android:name=".activity.FrameWorkTest"
@@ -232,6 +232,8 @@
             android:label="@string/title_activity_start_activity_for_result_test"></activity>
 
         <activity android:name=".activity.DrawViewActivity"/>
+
+        <activity android:name=".dagger2.subcomponent.ReposListActivity_Sub"/>
 
         <activity android:name=".pulltoRefresh.PullToRefreshActivity"/>
     </application>

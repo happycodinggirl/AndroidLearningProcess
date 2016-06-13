@@ -1,19 +1,16 @@
 package com.plu.huangxingli.androidlearningprocess.app;
 
 import android.app.Application;
-import android.graphics.Bitmap;
 
 import com.nostra13.universalimageloader.cache.disc.impl.LimitedAgeDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.LRULimitedMemoryCache;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.utils.StorageUtils;
-import com.plu.huangxingli.androidlearningprocess.R;
 import com.plu.huangxingli.androidlearningprocess.Utils.PluLogUtil;
-import com.plu.huangxingli.androidlearningprocess.dagger2.DemoGraph;
+import com.plu.huangxingli.androidlearningprocess.dagger2.denpendencycomponent.DemoGraph;
 
 import java.io.File;
 

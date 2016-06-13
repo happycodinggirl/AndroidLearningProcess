@@ -1,7 +1,5 @@
 
-package com.plu.huangxingli.androidlearningprocess.dagger2;
-
-import com.plu.huangxingli.androidlearningprocess.app.App;
+package com.plu.huangxingli.androidlearningprocess.dagger2.denpendencycomponent;
 
 import javax.inject.Singleton;
 

@@ -1,13 +1,12 @@
-package com.plu.huangxingli.androidlearningprocess.dagger2;
+package com.plu.huangxingli.androidlearningprocess.dagger2.denpendencycomponent;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.View;
 
 import com.plu.huangxingli.androidlearningprocess.BaseActivity;
 import com.plu.huangxingli.androidlearningprocess.R;
-import com.plu.huangxingli.androidlearningprocess.app.App;
+import com.plu.huangxingli.androidlearningprocess.dagger2.denpendencycomponent.ReposListActivity;
 
 /**
  * Created by lily on 16-5-25.

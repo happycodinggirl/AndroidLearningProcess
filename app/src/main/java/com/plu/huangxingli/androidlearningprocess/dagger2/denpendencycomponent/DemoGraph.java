@@ -1,6 +1,4 @@
-package com.plu.huangxingli.androidlearningprocess.dagger2;
-
-import com.plu.huangxingli.androidlearningprocess.MainActivity;
+package com.plu.huangxingli.androidlearningprocess.dagger2.denpendencycomponent;
 
 /**
  * Created by lily on 16-5-25.
