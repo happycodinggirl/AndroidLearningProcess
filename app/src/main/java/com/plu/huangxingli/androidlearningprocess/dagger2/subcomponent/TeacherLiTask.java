@@ -8,7 +8,7 @@ import javax.inject.Inject;
 public class TeacherLiTask extends TeachTask<ITeacherLiTask> {
 
     @Inject
-    public TeacherLiTask(ITeacherLiTask task) {
+    public TeacherLiTask(ITeacherLiTask task) {  //此处注意ITeacherLiTask必须在另外一个地方通过provide的方式来提供
         super(task);
     }
 }
