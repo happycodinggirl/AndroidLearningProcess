@@ -7,6 +7,7 @@ import rx.Subscription;
  * Created by lily on 16-6-13.
  */
 @Component(modules = {FragmentMould.class})
+@FragmentScope
 public interface FragmentComponent {
 
     //SubFragmentComponent provideSubFragmentComponent();

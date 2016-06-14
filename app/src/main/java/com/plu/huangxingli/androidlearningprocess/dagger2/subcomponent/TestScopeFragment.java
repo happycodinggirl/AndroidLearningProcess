@@ -19,6 +19,7 @@ import javax.inject.Inject;
  */
 public class TestScopeFragment extends Fragment {
 
+    @FragmentScope
     @Inject Teacher teacher;
     private TextView textView;
 

@@ -12,8 +12,9 @@ import dagger.Provides;
 public class FragmentMould {
 
     @Provides
-    ITeacherLiTask provideITeachTask(){
-        return new TeachTaskImp();
+    @FragmentScope
+    ITeacherLiTask provideITeachTask(TeachTaskImp teachTaskImp){
+        return teachTaskImp;
     }
 
 
