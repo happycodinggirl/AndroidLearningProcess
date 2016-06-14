@@ -4,13 +4,9 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/repos_rv_list"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"/>
-
-    <FrameLayout
-        android:id="@+id/fragment_container"
+    <TextView
+        android:id="@+id/tv_inject"
+        android:text="test inject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

@@ -6,6 +6,7 @@ package com.plu.huangxingli.androidlearningprocess.dagger2.subcomponent;
 public class Student {
 
 
+
     public Student(String name) {
         this.name = name;
     }

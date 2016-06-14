@@ -1,8 +1,10 @@
 package com.plu.huangxingli.androidlearningprocess.dagger2.subcomponent;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.FrameLayout;
 
 import com.plu.huangxingli.androidlearningprocess.BaseActivity;
 import com.plu.huangxingli.androidlearningprocess.R;
@@ -27,6 +29,8 @@ public class ReposListActivity_Sub extends BaseActivity {
     @Bind(R.id.repos_rv_list)
     RecyclerView mRvList;
 
+    @Bind(R.id.fragment_container)
+    FrameLayout mFragmentContainer;
 
     @Inject
     Student mStudent;
@@ -34,8 +38,11 @@ public class ReposListActivity_Sub extends BaseActivity {
     @Inject
     Child mChild;
 
-    @Inject
-    GitHubService mGitHubService;
+   // @Inject Teacher teacher;
+
+    @Inject GitHubService mGitHubService;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +50,18 @@ public class ReposListActivity_Sub extends BaseActivity {
         setContentView(R.layout.activity_repos_list);
         ButterKnife.bind(this);
 
+
         DemoComponent demoComponent = DaggerDemoComponent.builder().apiModule(new ApiModule()).mainMoudle(new MainMoudle()).build();
         SmallComponent smallComponent = demoComponent.provideSmalllComponent();  //此处注意provideSmallComponent里面不要传mould进去,它所依赖的
         //的mould在父component处就被注入了
         smallComponent.inject(this);
+        FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.fragment_container, new TestScopeFragment());
+        transaction.commit();
 
-        PluLogUtil.eLog("----mChild first name is " + mChild.getFirstName() + "  secondName is " + mChild.getSecondName()+"  student name is "+mStudent.getName());
+        PluLogUtil.eLog("----mChild first name is " + mChild.getFirstName() + "  secondName is " + mChild.getSecondName() + "  student name is " + mStudent.getName());
+
+       // PluLogUtil.eLog("-----teacher name is "+teacher.getName());
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         mRvList.setLayoutManager(manager);

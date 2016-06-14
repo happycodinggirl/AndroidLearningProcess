@@ -12,6 +12,7 @@ import dagger.Provides;
  * Created by lily on 16-5-25.
  */
 
+@FragmentScope
 @Module
 public class MainMoudle {
 

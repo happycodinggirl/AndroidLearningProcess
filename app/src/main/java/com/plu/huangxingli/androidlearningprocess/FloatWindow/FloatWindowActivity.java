@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import com.plu.huangxingli.androidlearningprocess.BaseActivity;
 import com.plu.huangxingli.androidlearningprocess.R;
+import com.plu.huangxingli.androidlearningprocess.dagger2.subcomponent.TestScopeFragment;
 
 public class FloatWindowActivity extends BaseActivity {
 
@@ -19,6 +20,7 @@ public class FloatWindowActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_float_window);
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container1,new TestScopeFragment()).commit();
 
         Button floatWindowButton= (Button) findViewById(R.id.button1);
 
