@@ -11,9 +11,11 @@ public class Teacher {
 
     public Lover lover;
 
+
+
     @Inject
-    public Teacher(Lover lover) {
-        this.lover=lover;
+    public Teacher(TeacherLiTask teacherLiTask) {
+       // this.teacherLiTask = teacherLiTask;
     }
 
     public String getName() {

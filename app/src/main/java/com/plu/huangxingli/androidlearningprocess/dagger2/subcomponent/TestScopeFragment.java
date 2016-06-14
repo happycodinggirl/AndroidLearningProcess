@@ -40,6 +40,7 @@ public class TestScopeFragment extends Fragment {
         fragmentComponent.inject(this);
        // fragmentComponent.inject(this);
         PluLogUtil.eLog("-----teacher is "+teacher+" name is "+teacher.getName()+"  teacher lover is "+teacher.getLover());
+        teacher.setName("lily teacher");
         textView.setText(teacher.getName());
 
 
