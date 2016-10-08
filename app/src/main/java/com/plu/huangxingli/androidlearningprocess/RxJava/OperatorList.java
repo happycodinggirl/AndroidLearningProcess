@@ -24,7 +24,7 @@ import com.plu.huangxingli.androidlearningprocess.adapter.TitleAdapter;
 
 public class OperatorList extends BaseActivity {
 
-    String[] operatorList={"创建操作符","变换操作符","过滤操作符","结合操作符","错误处理操作符","辅助操作符","条件和布尔操作符","算术和聚合操作符","异步操作符","连接操作符"};
+    String[] operatorList={"创建操作符","变换操作符","过滤操作符","结合操作符","错误处理操作符","功能性操作符","条件和布尔操作符","算术和聚合操作符","异步操作符","连接操作符",};
 
     Class[] lessonActivity={RxCreateSignActivity.class,ChangeSignActivity.class, FilterOperators.class, CombineOperators.class, ErrorHandlerOperators.class,
             AssistOperators.class, ConditionAndBooleanOperators.class, MathematicalAndAggregateOperators.class, AsyOperators.class, ConnectionOperators.class};
