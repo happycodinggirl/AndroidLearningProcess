@@ -5,12 +5,46 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_custom_view"
+    android:alpha="1"
     tools:context="com.plu.huangxingli.androidlearningprocess.activity.CustomViewActivity">
 
     <com.plu.huangxingli.androidlearningprocess.view.SimpleCustomView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="100dp"
+        android:visibility="gone"
+        android:id="@+id/simplecustomview"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:padding="10dp"
         />
+
+    <TextView
+        android:visibility="gone"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@+id/simplecustomview"
+        android:text="padding起作用的简单自定义view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.plu.huangxingli.androidlearningprocess.view.CosView
+        android:visibility="gone"
+        android:layout_below="@+id/simplecustomview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+
+            android:background="@android:color/white"
+            android:src="@drawable/oval_shadow_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+
+
 
 </RelativeLayout>

@@ -3,10 +3,14 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+    <View
+        android:background="@android:color/holo_green_dark"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="80dp"
         android:layout_gravity="center"
         android:gravity="center"
         android:id="@+id/textview_title"/>

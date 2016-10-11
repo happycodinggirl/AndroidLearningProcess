@@ -16,6 +16,7 @@ import com.plu.huangxingli.androidlearningprocess.RxJava.RXCatogry;
 import com.plu.huangxingli.androidlearningprocess.TimerAbout.TimerActivity;
 import com.plu.huangxingli.androidlearningprocess.ToastAbout.ToastActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.CustomViewActivity;
+import com.plu.huangxingli.androidlearningprocess.activity.CustomViewListActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.DanmuKuActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.FrameWorkTest;
 import com.plu.huangxingli.androidlearningprocess.activity.LinkedBlockingDequeTest;
@@ -25,6 +26,7 @@ import com.plu.huangxingli.androidlearningprocess.activity.ImageActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.LongImageViewActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.MAnimateTest;
 import com.plu.huangxingli.androidlearningprocess.activity.PopupAnimateActivity;
+import com.plu.huangxingli.androidlearningprocess.activity.RecycleViewScrollActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.SelfRcViewActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.SendedMessageActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.StartActivityForResultTest;
@@ -97,7 +99,7 @@ public class MainActivity extends BaseActivity {
         lessonMap.put("测试自定义View使用", ViewMeasureActivity.class);
         lessonMap.put("测试事件拦截机制", TestTouchEvent.class);
         lessonMap.put("RxJava使用",RXCatogry.class);
-        lessonMap.put("自定义view的简单使用", CustomViewActivity.class);
+        lessonMap.put("自定义view", CustomViewListActivity.class);
         lessonMap.put("Activity的跳转处理",SecondActivity.class);
         lessonMap.put("Activity启动模式测试", TestActivityTask.class);
         lessonMap.put("动画测试",GiftAnimationActivity.class);
@@ -117,6 +119,7 @@ public class MainActivity extends BaseActivity {
         lessonMap.put("handler测试", HandlerTestActivity.class);
         lessonMap.put("消息队列测试",LinkedBlockingDequeTest.class);
         lessonMap.put("startActivityForResult的fragment测试",StartActivityForResultTest.class);
+        lessonMap.put("RecycleView滚动位置测试",RecycleViewScrollActivity.class);
 
 
 

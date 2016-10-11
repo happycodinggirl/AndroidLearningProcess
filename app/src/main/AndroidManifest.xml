@@ -62,6 +62,8 @@
         <activity
             android:name=".serviceAbout.ServiceActivity$InnerActivity"
             android:label="@string/title_activity_second" />
+
+        <activity android:name=".activity.RecycleViewScrollActivity"/>
         <activity android:name=".SecondActivity">
             <intent-filter>
                 <action android:name="com.google.app.myapp.plu" />
@@ -118,8 +120,8 @@
             android:label="@string/title_activity_rx_java" />
         <activity
             android:name=".activity.CustomViewActivity"
-            android:launchMode="singleTask"
             android:label="@string/title_activity_custom_view"
+            android:launchMode="singleTask"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".RxJava.RXCatogry"
@@ -198,34 +200,38 @@
             android:label="@string/title_activity_danmu_ku" />
         <activity
             android:name=".activity.LongImageViewActivity"
-            android:label="@string/title_activity_long_image_view"></activity>
+            android:label="@string/title_activity_long_image_view" />
         <activity
             android:name=".activity.AnimatorSet"
-            android:label="@string/title_activity_animator_set"></activity>
+            android:label="@string/title_activity_animator_set" />
         <activity
             android:name=".activity.TestFontActivity"
-            android:label="@string/title_activity_test_font"></activity>
+            android:label="@string/title_activity_test_font" />
         <activity
             android:name=".activity.ViewHandlerActivity"
-            android:label="@string/title_activity_view_handler"></activity>
+            android:label="@string/title_activity_view_handler" />
         <activity
             android:name=".activity.SendedMessageActivity"
-            android:label="@string/title_activity_sended_message"></activity>
+            android:label="@string/title_activity_sended_message" />
         <activity
             android:name=".activity.HandlerTestActivity"
             android:label="@string/title_activity_handler_test"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".activity.LinkedBlockingDequeTest"
             android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_glsurface_view_test"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".activity.WebSocketActivity"
-            android:label="@string/title_activity_web_socket"></activity>
+            android:label="@string/title_activity_web_socket" />
         <activity
             android:name=".activity.StartActivityForResultTest"
-            android:label="@string/title_activity_start_activity_for_result_test"></activity>
+            android:label="@string/title_activity_start_activity_for_result_test" />
+        <activity
+            android:name=".activity.CustomViewListActivity"
+            android:label="@string/title_activity_custom_view_list"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

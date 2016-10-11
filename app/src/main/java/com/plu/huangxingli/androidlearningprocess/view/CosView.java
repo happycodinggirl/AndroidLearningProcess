@@ -55,8 +55,9 @@ public class CosView extends View{
     }
 
     private void drawCircle(Canvas canvas){
-       // canvas.drawLine(oldPoint.x,oldPoint.y,currentPoint.x,currentPoint.y,paint);
-        canvas.drawCircle(currentPoint.x,currentPoint.y,5,paint);
+        canvas.drawLine(oldPoint.x,oldPoint.y,currentPoint.x,currentPoint.y,paint);
+        //canvas.drawPath();
+        //canvas.drawCircle(currentPoint.x,currentPoint.y,500,paint);
     }
 
 
@@ -66,7 +67,7 @@ public class CosView extends View{
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 currentPoint = (Point) animation.getAnimatedValue();
-               // oldPoint = currentPoint;
+           //     oldPoint = currentPoint;
                 invalidate();
             }
         });
@@ -81,7 +82,7 @@ public class CosView extends View{
         public Point evaluate(float fraction, Point startValue, Point endValue) {
             int startX=startValue.x;
             int endX= (int) (startX+fraction*(endValue.x-startX));
-           // int startY=startValue.y;
+            int startY=startValue.y;
             int endY= (int) ((1/2)*Math.cos(endX+1)*Math.PI+0.5);
             Point point=new Point(endX,endY);
             return point;
