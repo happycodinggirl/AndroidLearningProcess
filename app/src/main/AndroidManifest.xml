@@ -75,6 +75,8 @@
             android:name=".serviceAbout.ServiceActivity"
             android:label="MyActivity" />
         <activity android:name=".ToastAbout.ToastActivity" />
+
+        <activity android:name=".activity.GoodCarActivity"/>
         <activity
             android:name=".BaseActivity"
             android:label="@string/title_activity_base" />

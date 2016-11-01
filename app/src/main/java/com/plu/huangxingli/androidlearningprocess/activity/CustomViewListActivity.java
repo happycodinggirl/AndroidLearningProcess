@@ -42,7 +42,7 @@ public class CustomViewListActivity extends BaseActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(CustomViewListActivity.this);
         recycleviewCustomview.setLayoutManager(linearLayoutManager);
         itemList=new ArrayList<>();
-        itemList.add("简单自定义View");
+        itemList.add("购物车效果");
         itemList.add("cos函数绘制");
         CustormViewListAdapter custormViewListAdapter=new CustormViewListAdapter(getApplicationContext());
         custormViewListAdapter.setData(itemList);
@@ -51,7 +51,7 @@ public class CustomViewListActivity extends BaseActivity {
             public void onItemClick(int pos) {
                 switch (pos){
                     case 0:
-                        toActivity(CustomViewListActivity.this,CustomViewActivity.class);
+                        toActivity(CustomViewListActivity.this,GoodCarActivity.class);
 
                         break;
                     case 1:
