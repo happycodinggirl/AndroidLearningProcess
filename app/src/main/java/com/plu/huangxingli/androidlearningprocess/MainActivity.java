@@ -15,14 +15,14 @@ import com.plu.huangxingli.androidlearningprocess.FloatWindow.FloatWindowActivit
 import com.plu.huangxingli.androidlearningprocess.RxJava.RXCatogry;
 import com.plu.huangxingli.androidlearningprocess.TimerAbout.TimerActivity;
 import com.plu.huangxingli.androidlearningprocess.ToastAbout.ToastActivity;
-import com.plu.huangxingli.androidlearningprocess.activity.CustomViewActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.CustomViewListActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.DanmuKuActivity;
+import com.plu.huangxingli.androidlearningprocess.activity.DragViewActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.FrameWorkTest;
-import com.plu.huangxingli.androidlearningprocess.activity.LinkedBlockingDequeTest;
 import com.plu.huangxingli.androidlearningprocess.activity.HandlerTestActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.HandlerThreadActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.ImageActivity;
+import com.plu.huangxingli.androidlearningprocess.activity.LinkedBlockingDequeTest;
 import com.plu.huangxingli.androidlearningprocess.activity.LongImageViewActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.MAnimateTest;
 import com.plu.huangxingli.androidlearningprocess.activity.PopupAnimateActivity;
@@ -30,21 +30,21 @@ import com.plu.huangxingli.androidlearningprocess.activity.RecycleViewScrollActi
 import com.plu.huangxingli.androidlearningprocess.activity.SelfRcViewActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.SendedMessageActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.StartActivityForResultTest;
+import com.plu.huangxingli.androidlearningprocess.activity.SurfaceViewTest;
 import com.plu.huangxingli.androidlearningprocess.activity.TabHostFragmentTest;
 import com.plu.huangxingli.androidlearningprocess.activity.TestActivityTask;
 import com.plu.huangxingli.androidlearningprocess.activity.TestFontActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.TestInnerClass;
 import com.plu.huangxingli.androidlearningprocess.activity.TimerTaskActivity;
-import com.plu.huangxingli.androidlearningprocess.activity.ValueAnimatorActivity;
-import com.plu.huangxingli.androidlearningprocess.activity.SurfaceViewTest;
 import com.plu.huangxingli.androidlearningprocess.activity.TimerTextViewActivity;
+import com.plu.huangxingli.androidlearningprocess.activity.ValueAnimatorActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.ViewHandlerActivity;
 import com.plu.huangxingli.androidlearningprocess.activity.ViewMeasureActivity;
+import com.plu.huangxingli.androidlearningprocess.adapter.TitleAdapter;
 import com.plu.huangxingli.androidlearningprocess.bmobAbout.BomboActivity;
 import com.plu.huangxingli.androidlearningprocess.realMvp.view.ArticleListActivity;
 import com.plu.huangxingli.androidlearningprocess.retrofit.Main2Activity;
 import com.plu.huangxingli.androidlearningprocess.serviceAbout.ServiceActivity;
-import com.plu.huangxingli.androidlearningprocess.adapter.TitleAdapter;
 import com.plu.huangxingli.androidlearningprocess.touchEvent.TestTouchEvent;
 
 /**
@@ -120,6 +120,7 @@ public class MainActivity extends BaseActivity {
         lessonMap.put("消息队列测试",LinkedBlockingDequeTest.class);
         lessonMap.put("startActivityForResult的fragment测试",StartActivityForResultTest.class);
         lessonMap.put("RecycleView滚动位置测试",RecycleViewScrollActivity.class);
+        lessonMap.put("ViewDragCallback测试",DragViewActivity.class);
 
 
 

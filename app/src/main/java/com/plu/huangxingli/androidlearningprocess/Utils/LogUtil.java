@@ -3,14 +3,13 @@ package com.plu.huangxingli.androidlearningprocess.Utils;
 import android.text.TextUtils;
 import android.util.Log;
 
-
-/**一个较完善的logUtil，可以打印log所在
- * {类:方法:行数}
- * Created by huangxl on 2016/8/19.
+/**
+ * Created by Administrator on 2017/7/25.
  */
-public class LogUtil {
 
-    public static String tagPrefix = "MTLog";//log前缀
+public class LogUtil {
+    public static String tagPrefix = "LilyLog";//log前缀
+   // public static boolean debug = BuildConfig.DEBUG;
     public static boolean debug = true;
 
     public static void d(Object o) {
